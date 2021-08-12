@@ -1,5 +1,3 @@
-/*@keyframes fade{25%{transform: scale(.7);} 50%{ transform: scale(1);}75%{transform: scale(1.2);}100%{transform: scale(.9);}}*/
-
 @keyframes loader{
     25%{
         color: #2ecc71;
@@ -32,15 +30,17 @@
 
 body{
 	font-family: Arial;
-	background: #1dd1a1
+	background: #1dd1a1;
+	position: relative;
+	height: 100vh;
 }
 
 table {
 	width: 100%;
 	border-radius: 12px;
+	overflow: hidden;
 	border-spacing: unset;
 	border: 1px solid #afbdcc !important;
-	overflow: hidden;
 }
 
 thead{
@@ -169,7 +169,7 @@ footer i{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: .7s;
+	transition: .5s;
 	color: #fff;
 }
 
@@ -190,12 +190,8 @@ footer i{
 	background-color: #c7ecee;
 	border: none;
 	color: #535c68;
-	font-weight: 600;
+	font-weight: bold;
 	font-size: 17px
-}
-
-.input::placeholder{
-	font-weight: 600;
 }
 
 .ico{
@@ -214,22 +210,23 @@ footer i{
 	bottom: 9px;
 	right: 7px;
 	-webkit-transform: translateY(20px);
-	        transform: translateY(20px); 
-	color: #ffff;;
+	transform: translateY(20px);
+	color: #ffff;
 	z-index: 999;
 	box-shadow: .5px .5px 2px #7E7E7E;
-	/* box-shadow: 1.2px -2.0px 5px #797878, -1.2px 2.0px 7px #797878; */
 	visibility: hidden;
 	overflow: hidden;
 	-webkit-transition: .3s;
-	transition: .7s;
+	transition: .3s;
 	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+	-moz-transform: translateY(20px);
+	-ms-transform: translateY(20px);
+	-o-transform: translateY(20px);
 }
 
 .go_top:hover{
-	background-color: #494949;
-	/* color: #000; */
+	background-color: #fff;
+	color: #000;
 	cursor: pointer;
 }
 
@@ -238,7 +235,8 @@ footer i{
 	-webkit-transform: translateY(0px) scale(.8);
 	        transform: translateY(0px) scale(.8);
 	opacity: 1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	animation: UpDown 2.5s infinite;
+		-webkit-animation: UpDown 2s infinite;
 }
 
 .go_top ul{
@@ -276,11 +274,11 @@ footer i{
 	margin-bottom: 0
 }
 
-td:hover .coppy{
+td:hover .copy{
 	visibility: visible;
 }
 
-.coppy{
+.copy{
 	position: absolute;
 	right: 5px;
 	bottom: 5px;
@@ -299,52 +297,68 @@ td:hover .coppy{
 	-o-transform: translate(.9);
 }
 
-.coppy i{
+.copy i{
 	font-size: 13px;
 	font-weight: 200;
 }
 
-.coppy:hover{
+.copy:hover{
 	cursor: pointer;
 	background-color: #000;
 	border-color: #000;
 }
 
-.coppy:active{
+.copy:active{
 	transform: scale(1.2);
 	-webkit-transform: scale(1.2);
 	-moz-transform: scale(1.2);
 	-ms-transform: scale(1.2);
 	-o-transform: scale(1.2);
-	background-color: #1dd1a1;
-	border-color: #1dd1a1;
 }
 
-.fade{
-	animation: fade 1s;
-	background-color: #000;
-}
-
-.coppy:hover i, .fade i{
+.copy:hover i, .fade i{
 	font-weight: 800;
 	color: #fff;
 }
 
+.coppied{
+	position: fixed;
+	bottom: 0px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	background-color: #636e72;
+	color: #fff;
+	padding: 15px 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	transition: .3s ease-out;
+	-webkit-transition: .3s ease-out;
+	-moz-transition: .3s ease-out;
+	-ms-transition: .3s ease-out;
+	-o-transition: .3s ease-out;
+	opacity: 0;
+}
+
+.coppied_active{
+	opacity: 1;
+	bottom: 10px;
+	transition: .3s ease-in;
+	-webkit-transition: .3s ease-in;
+	-moz-transition: .3s ease-in;
+	-ms-transition: .3s ease-in;
+	-o-transition: .3s ease-in;
+}
+
 @media(max-width: 780px){
-	header > div:nth-child(1){
-		width: 35%;
-	}
-
-	header > div:nth-child(2){
-		width: 65%;
-	}
-
-	i{
-		font-size: 20px
-	}
-
 	.table{
-		padding: 5px;
+		padding: 0;
 	}
 
 	table tr th:nth-child(1),table tr td:nth-child(1){
@@ -362,42 +376,22 @@ td:hover .coppy{
 	}
 
 	.logo h1, .logo i{
-		font-size: 22px;
+		font-size: 22px
 	}
 
-	.logo span{
-		font-size: 15px;
-		top: -2px;
-		position: relative;
+	.copy{
+		transform: scale(.5);
+		-webkit-transform: scale(.5);
+		-moz-transform: scale(.5);
+		-ms-transform: scale(.5);
+		-o-transform: scale(.5);
 	}
 
-	.coppy{
-		transform: scale(.8);
-		-webkit-transform: scale(.8);
-		-moz-transform: scale(.8);
-		-ms-transform: scale(.8);
-		-o-transform: scale(.8);
-}
-
-	.coppy:active{
+	.copy:active{
 		transform: scale(1);
 		-webkit-transform: scale(1);
 		-moz-transform: scale(1);
 		-ms-transform: scale(1);
 		-o-transform: scale(1);
-	}
-
-	.go_top{
-		transform: scale(.68);
-	}
-}
-
-@media(max-width: 480px){
-	.logo h1, .logo i{
-		font-size: 30px;
-	}
-
-	.logo span{
-		display: none;
 	}
 }
