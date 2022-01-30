@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<div class="loader-container">
+	<!-- <div class="loader-container">
         <div class="loader"></div>
 	</div>
 
@@ -20,7 +20,7 @@
 			<li><i class="fas fa-arrow-alt-circle-up"></i></li>
 			<li><p>Top</p></li>
 		</ul>	
-	</div>
+	</div> -->
 
 	<header>
 
@@ -55,7 +55,13 @@
 					<th>fab <span>(fa brands)</span></th>
 				</tr>
 			</thead>
-			<tbody id="myTable"></tbody>
+			<tbody id="myTable">
+				<tr id="loding_awit">
+					<td colspan=7 style="text-align: center;">
+						<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+					</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 	<div id="fabs"></div>

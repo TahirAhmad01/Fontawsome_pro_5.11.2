@@ -4,12 +4,20 @@ $( function() {
 	$.ajax( {
 		url: 'faicons.json',
 
-		success: function( res ) {
+		beforeSend: () => {
+			$('#loding_awit').show()
+		},
+
+		complete: () => {
+			$('#loding_awit').hide()
+		},
+
+		success: async function( res ) {
 
 			var myTable = $( '#myTable' );
 			var categories = [ 'fa', 'fad', 'fal', 'far', 'fas', 'fab' ];
 
-			res.forEach( icon => {
+			await res.forEach( icon => {
 
 				var trElem = $( '<tr/>' );
 				trElem.append( $( '<td/>' ).text( icon[0] ) );
@@ -45,9 +53,8 @@ $( function() {
 				myTable.append( trElem );
 
 			} );
-
+			
 			myTable.ready( function() {
-				$(".loader-container").fadeOut(200);
 				$(window).scrollTop(0);
 
 				console.log("%c Window Loaded!", "color: red; font-size:35px;");
@@ -90,7 +97,8 @@ $( function() {
 						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 					});
 				});
-			} );
-		}
-	} );
-} );
+			} )
+		},
+	
+	})
+})
