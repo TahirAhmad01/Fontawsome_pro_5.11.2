@@ -1,20 +1,21 @@
 $( function() {
 	'use strict'
+	
+	var myTable = $( '#myTable' );
 
 	$.ajax( {
 		url: 'faicons.json',
 
 		beforeSend: () => {
-			$('#loding_awit').show()
+			$('#loding_awit').show();
 		},
 
 		complete: () => {
-			$('#loding_awit').hide()
+			$('#loding_awit').remove();
 		},
 
 		success: async function( res ) {
-
-			var myTable = $( '#myTable' );
+			
 			var categories = [ 'fa', 'fad', 'fal', 'far', 'fas', 'fab' ];
 
 			await res.forEach( icon => {
@@ -41,7 +42,7 @@ $( function() {
 							$(".coppied").text( "Coppied! Paste me ")
 							setTimeout(function(){
 								$(".coppied").removeClass("coppied_active");
-							}, 1000)
+							}, 1200)
 						} );
 
 						tdElem.append( data ).append( $( '<div/>' ).append( btnElem ) );
@@ -91,14 +92,18 @@ $( function() {
 					$(window).scrollTop(0)
 				});
 
-				$("#myInput").on("keyup", function() {
-					var value = $(this).val().toLowerCase();
-					$("#myTable tr").filter(function() {
-						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-					});
-				});
+				
 			} )
 		},
 	
+	})
+
+	$(document).ready(() => {
+		$("#myInput").on("keyup", function() {
+			var value = $(this).val().toLowerCase();
+			$("#myTable tr").filter(function() {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
 	})
 })
