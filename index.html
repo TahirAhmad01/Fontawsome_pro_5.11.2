@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Font awesome</title>
-	<!-- <link rel="stylesheet" href="../assets/fontawesome/5.11.2/css/all.css"> -->
-	<link rel="stylesheet" href="fsm/css/all.min.css">
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-	<!-- <div class="loader-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font awesome</title>
+    <!-- <link rel="stylesheet" href="../assets/fontawesome/5.11.2/css/all.css"> -->
+    <link rel="stylesheet" href="fsm/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- <div class="loader-container">
         <div class="loader"></div>
 	</div>
 
@@ -22,59 +21,70 @@
 		</ul>	
 	</div> -->
 
-	<header>
+    <header>
+      <div class="header_1">
+        <div class="logo">
+          <h1><i class="fab fa-font-awesome"></i> Font Awesome</h1>
+        </div>
+      </div>
+      <div class="header_2">
+        <div class="icon">
+          <div class="s_inp">
+            <input
+              id="myInput"
+              class="input"
+              style="display: none"
+              type="text"
+              placeholder="Search.."
+            />
+          </div>
+          <div id="search" class="s_but">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+      </div>
+    </header>
 
-		<div class="header_1">
-			<div class="logo">
-				<h1><i class="fab fa-font-awesome"></i> Font Awesome</h1>
-			</div>
-		</div>
-		<div class="header_2">
-			<div class="icon">
-				<div class="s_inp">
-					<input id="myInput" class="input" style="display: none;" type="text" placeholder="Search..">
-				</div>
-				<div id="search" class="s_but">
-					<i class="fas fa-search"></i>
-				</div>
-			</div>
-		</div>
-		
-	</header>
+    <div class="table">
+      <table>
+        <thead id="thead">
+          <tr>
+            <th>Icon name</th>
+            <th>fa <span>(same as fas)</span></th>
+            <th>fad <span>(fa duotone)</span></th>
+            <th>fal <span>(fa light)</span></th>
+            <th>far <span>(fa regular)</span></th>
+            <th>fas <span>(fa solid)</span></th>
+            <th>fab <span>(fa brands)</span></th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <tr id="loding_awit">
+            <td colspan="7" style="text-align: center; padding: 120px 0">
+              <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="fabs"></div>
 
-	<div class="table">
-		<table>
-			<thead id="thead">
-				<tr>
-					<th>Icon name</th>
-					<th>fa  <span>(same as fas)</span></th>
-					<th>fad <span>(fa duotone)</span></th>
-					<th>fal <span>(fa light)</span></th>
-					<th>far <span>(fa regular)</span></th>
-					<th>fas <span>(fa solid)</span></th>
-					<th>fab <span>(fa brands)</span></th>
-				</tr>
-			</thead>
-			<tbody id="myTable">
-				<tr id="loding_awit">
-					<td colspan=7 style="text-align: center; padding: 120px 0">
-						<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div id="fabs"></div>
+    <div class="coppied">Past me : <i class="fal fa-copyright"></i></div>
 
-	<div class="coppied">
-		Past me : i class="fal fa-copyright"</i>
-	</div>
-
-	<footer>
-		 Lazy Developers Community (LDC) <i class="fal fa-copyright"></i> 2020
-	</footer>
-	<!-- <script src="../assets/jquery/3.5.1/jquery.min.js"></script> -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/main.js"></script>
-</body>
+    <footer>
+      Lazy Developers Community (LDC) <i class="fal fa-copyright"></i> 2020
+    </footer>
+    <!-- <script src="../assets/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
